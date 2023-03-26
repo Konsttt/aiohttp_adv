@@ -160,7 +160,7 @@ async def get_advs(request: web.Request):
     return response
 
 
-# Функция для запроса по всем объявлениям с помощью стримминга.
+# Функция для запроса по всем объявлениям конкретного пользователя с помощью стримминга.
 async def get_owner_advs(request: web.Request):
     owner_id = int(request.match_info['owner_id'])
     response = web.StreamResponse()
