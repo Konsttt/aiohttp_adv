@@ -9,13 +9,13 @@ async def main():
         # response = await session.get('http://127.0.0.1:8080/hello_world')
 
 ############# Запросы по пользователям (по таблице Users) ############
-        # # Post запрос для создания пользователя
-        # response = await session.post('http://127.0.0.1:8080/user', json={
-        #     'email': 'user12@mail.ru',
-        #     'password': '12345678'
-        # })
-        # print(response.status)
-        # print(await response.json())
+        # Post запрос для создания пользователя
+        response = await session.post('http://127.0.0.1:8080/user', json={
+            'email': 'user1@mail.ru',
+            'password': '12345678'
+        })
+        print(response.status)
+        print(await response.json())
 
         # # Post запрос для url /login' для проверки юзера и пароля. Get тоже работает.
         # response = await session.post('http://127.0.0.1:8080/login', json={
@@ -113,12 +113,12 @@ async def main():
         # async for line in response.content:
         #     print(line.decode("unicode-escape"))
 
-        # Get запрос - вывести все объявления пользователя, id которого указан в url-e
-        response = await session.get('http://127.0.0.1:8080/advs_owner/11')
-        print(response.status)
-        async for line in response.content:
-            # https://stackoverflow.com/questions/6504200/how-to-decode-unicode-raw-literals-to-readable-string
-            # Долго боролся с отображением кириллицы
-            print(line.decode("unicode-escape"))
+        # # Get запрос - вывести все объявления пользователя, id которого указан в url-e
+        # response = await session.get('http://127.0.0.1:8080/advs_owner/11')
+        # print(response.status)
+        # async for line in response.content:
+        #     # https://stackoverflow.com/questions/6504200/how-to-decode-unicode-raw-literals-to-readable-string
+        #     # Долго боролся с отображением кириллицы
+        #     print(line.decode("unicode-escape"))
 
 run(main())
